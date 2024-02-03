@@ -1,7 +1,3 @@
-
-
-
-
 const sub=document.querySelector(".post-btn");
 const right=document.querySelector(".right-main");
 const main_input=document.querySelector(".input-comment");
@@ -19,7 +15,7 @@ sub.addEventListener('click', () => {
                             <button  class="transparent-button" id="edit">
                                 <img  src="https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/064/028/original/edit.png?1706888661">
                             </button>
-                            <button id="delete" class="transparent-button">
+                            <button  class="transparent-button delete">
                                 <img src="https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/064/027/original/delete.png?1706888643">
                             </button>
                         </div>
@@ -36,10 +32,12 @@ sub.addEventListener('click', () => {
         </div>
     `;
 
-    const del=document.querySelector("#delete");
-    
-    del.addEventListener("click",(e)=>{
-        e.target.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
+    const del=document.querySelectorAll(".delete");
+    del.forEach(ele=>{
+        ele.addEventListener("click",(e)=>{
+            e.target.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
+
+        })
     })
 
 
