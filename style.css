@@ -17,7 +17,12 @@ hr {
     display: flex;
     gap:10px;
 }
-
+.like-src{
+    display: block;
+}
+.liked-src{
+    display: none;
+}
 .input-comment {
     border-radius: 8px;
     border: none;

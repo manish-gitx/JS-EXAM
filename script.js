@@ -28,10 +28,13 @@ sub.addEventListener('click', () => {
                         </div>
                     </div>
                     <textarea class="right-input" placeholder="Type">${inside}</textarea>
-                    <button class="transparent-button">
                         <div class="interact-icons">
-                            <img id="comment" src="https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/064/026/original/comment.png?1706888619">
-                            <img id="like" src="https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/064/029/original/heart.png?1706888679">
+                            <button class="transparent-button id="comment-btn">
+                                <img id="comment" src="https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/064/026/original/comment.png?1706888619">
+                            </button>
+                            <button class="transparent-button like-btn">
+                                <img id="like" class="like-src" src="https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/064/029/original/heart.png?1706888679">
+                            </button>
                         </div>
                     </button>
                 </div>
@@ -41,11 +44,23 @@ sub.addEventListener('click', () => {
 
     const del=document.querySelectorAll(".delete");
     const r_input = document.querySelectorAll(".right-input");
-    
+    const like=document.querySelectorAll(".like-btn");
+    like.forEach((ele) => {
+        ele.addEventListener('click',()=>{
+           const img=ele.querySelector("img");
+           if(img.src==="https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/064/029/original/heart.png?1706888679"){
+            img.src="https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/064/025/original/state_clicked.png?1706888455"
+           }
+           else{
+            img.src="https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/064/029/original/heart.png?1706888679";
+           }
+        })
 
-r_input.forEach(input => {
-    input.setAttribute('readonly', true);
-});
+    });
+
+    r_input.forEach(input => {
+        input.setAttribute('readonly', true);
+    });
 const editButtons = document.querySelectorAll(".edit-btn");
 editButtons.forEach(button => {
     button.addEventListener("click", (e) => {
